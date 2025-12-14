@@ -58,9 +58,9 @@ const Dashboard = () => {
                         &larr; Back to Dashboard
                     </button>
                 </div>
-                <h2 className="text-2xl font-bold text-gray-800">Subject Drill</h2>
+                <h2 className="text-xl md:text-2xl font-bold text-gray-800">Subject Drill</h2>
 
-                <div className="bg-white p-6 rounded-lg shadow-md space-y-4 max-w-lg">
+                <div className="bg-white p-4 md:p-6 rounded-lg shadow-md space-y-4 max-w-lg mx-auto md:mx-0">
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
                         <select
@@ -115,37 +115,37 @@ const Dashboard = () => {
     }
 
     return (
-        <div className="space-y-8 animate-in fade-in duration-500">
+        <div className="space-y-6 md:space-y-8 animate-in fade-in duration-500">
             {/* Stats Overview */}
-            <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center text-center">
-                    <div className="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center mb-3">
-                        <Target className="w-8 h-8 text-blue-600" />
+            <section className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+                <div className="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center text-center">
+                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-blue-50 flex items-center justify-center mb-3">
+                        <Target className="w-6 h-6 md:w-8 md:h-8 text-blue-600" />
                     </div>
-                    <h3 className="text-gray-500 text-sm font-medium uppercase tracking-wider">Overall Accuracy</h3>
-                    <p className="text-4xl font-bold text-gray-900 mt-2">{stats.overallAccuracy.toFixed(1)}%</p>
+                    <h3 className="text-gray-500 text-xs md:text-sm font-medium uppercase tracking-wider">Overall Accuracy</h3>
+                    <p className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">{stats.overallAccuracy.toFixed(1)}%</p>
                 </div>
 
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                    <h3 className="flex items-center gap-2 text-gray-700 font-semibold mb-4 border-b pb-2">
-                        <CheckCircle className="w-5 h-5 text-green-500" /> Strong Topics
+                <div className="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-gray-100">
+                    <h3 className="flex items-center gap-2 text-gray-700 font-semibold mb-4 border-b pb-2 text-sm md:text-base">
+                        <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-green-500" /> Strong Topics
                     </h3>
                     <div className="flex flex-wrap gap-2">
                         {stats.strongTopics.length > 0 ? stats.strongTopics.map((t) => (
-                            <span key={t} className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">
+                            <span key={t} className="px-2 md:px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">
                                 {t}
                             </span>
                         )) : <span className="text-gray-400 text-sm">No strong topics yet. Keep practicing!</span>}
                     </div>
                 </div>
 
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                    <h3 className="flex items-center gap-2 text-gray-700 font-semibold mb-4 border-b pb-2">
-                        <AlertCircle className="w-5 h-5 text-red-500" /> Weak Topics
+                <div className="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-gray-100">
+                    <h3 className="flex items-center gap-2 text-gray-700 font-semibold mb-4 border-b pb-2 text-sm md:text-base">
+                        <AlertCircle className="w-4 h-4 md:w-5 md:h-5 text-red-500" /> Weak Topics
                     </h3>
                     <div className="flex flex-wrap gap-2">
                         {stats.weakTopics.length > 0 ? stats.weakTopics.map((t) => (
-                            <span key={t} className="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-medium">
+                            <span key={t} className="px-2 md:px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-medium">
                                 {t}
                             </span>
                         )) : <span className="text-gray-400 text-sm">No weak topics found. Good job!</span>}
@@ -155,19 +155,19 @@ const Dashboard = () => {
 
             {/* Action Buttons */}
             <section>
-                <h2 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-                    <Brain className="w-6 h-6 text-indigo-600" /> Start Practice
+                <h2 className="text-lg md:text-xl font-bold text-gray-800 mb-4 md:mb-6 flex items-center gap-2">
+                    <Brain className="w-5 h-5 md:w-6 md:h-6 text-indigo-600" /> Start Practice
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                     <button
                         onClick={() => handleStartExam('full')}
                         disabled={loading}
-                        className="group relative overflow-hidden bg-gradient-to-br from-blue-600 to-indigo-700 text-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all text-left"
+                        className="group relative overflow-hidden bg-gradient-to-br from-blue-600 to-indigo-700 text-white p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all text-left"
                     >
                         <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                            <Play className="w-24 h-24" />
+                            <Play className="w-20 h-20 md:w-24 md:h-24" />
                         </div>
-                        <h3 className="text-2xl font-bold mb-2">Start Full Mock</h3>
+                        <h3 className="text-xl md:text-2xl font-bold mb-2">Start Full Mock</h3>
                         <p className="opacity-90 text-sm">Standard 20 Qs pattern mix. Test your readiness.</p>
                         {loading && <div className="absolute inset-0 bg-black/20 flex items-center justify-center">Generating...</div>}
                     </button>
@@ -175,13 +175,13 @@ const Dashboard = () => {
                     <button
                         onClick={() => handleStartExam('weakness')}
                         disabled={loading}
-                        className="group bg-white border border-gray-200 p-8 rounded-2xl shadow-sm hover:border-red-300 hover:shadow-md transition-all text-left"
+                        className="group bg-white border border-gray-200 p-6 md:p-8 rounded-2xl shadow-sm hover:border-red-300 hover:shadow-md transition-all text-left"
                     >
                         <div className="flex items-center gap-3 mb-3">
                             <div className="p-2 bg-red-100 rounded-lg text-red-600">
-                                <Target className="w-6 h-6" />
+                                <Target className="w-5 h-5 md:w-6 md:h-6" />
                             </div>
-                            <h3 className="text-xl font-bold text-gray-800">Fix Weakness</h3>
+                            <h3 className="text-lg md:text-xl font-bold text-gray-800">Fix Weakness</h3>
                         </div>
                         <p className="text-gray-500 text-sm">Auto-generates questions from your lowest accuracy topics.</p>
                     </button>
@@ -189,13 +189,13 @@ const Dashboard = () => {
                     <button
                         onClick={() => setDrillMode(true)}
                         disabled={loading}
-                        className="group bg-white border border-gray-200 p-8 rounded-2xl shadow-sm hover:border-blue-300 hover:shadow-md transition-all text-left"
+                        className="group bg-white border border-gray-200 p-6 md:p-8 rounded-2xl shadow-sm hover:border-blue-300 hover:shadow-md transition-all text-left"
                     >
                         <div className="flex items-center gap-3 mb-3">
                             <div className="p-2 bg-blue-100 rounded-lg text-blue-600">
-                                <BookOpen className="w-6 h-6" />
+                                <BookOpen className="w-5 h-5 md:w-6 md:h-6" />
                             </div>
-                            <h3 className="text-xl font-bold text-gray-800">Subject Drill</h3>
+                            <h3 className="text-lg md:text-xl font-bold text-gray-800">Subject Drill</h3>
                         </div>
                         <p className="text-gray-500 text-sm">Select specific subject and topic to master.</p>
                     </button>

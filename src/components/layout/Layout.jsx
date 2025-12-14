@@ -13,14 +13,14 @@ const Layout = ({ children }) => {
                     <div className="flex items-center gap-4">
                         {/* Logo area */}
                         <div className="flex flex-col">
-                            <span className="text-2xl font-bold bg-gradient-to-r from-blue-700 to-blue-500 bg-clip-text text-transparent">
+                            <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-700 to-blue-500 bg-clip-text text-transparent">
                                 SSC GD Mock
                             </span>
-                            <span className="text-xs text-gray-500 font-medium">Adaptive AI Platform</span>
+                            <span className="text-[10px] md:text-xs text-gray-500 font-medium">Adaptive AI Platform</span>
                         </div>
                     </div>
 
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2 md:gap-4">
                         <button
                             onClick={() => setIsSettingsOpen(true)}
                             className="p-2 text-gray-600 hover:bg-gray-100 rounded-full transition-colors"
@@ -39,7 +39,7 @@ const Layout = ({ children }) => {
             </header>
 
             {/* Main Content */}
-            <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full">
+            <main className="flex-1 max-w-7xl mx-auto px-2 md:px-4 sm:px-6 lg:px-8 py-4 md:py-6 w-full">
                 {children}
             </main>
 

@@ -7,12 +7,12 @@ const ResultAnalysis = () => {
 
     return (
         <div className="space-y-6">
-            <div className="bg-white p-8 rounded-xl shadow-sm text-center">
-                <h2 className="text-3xl font-bold mb-4">Exam Results</h2>
-                <div className="text-5xl font-bold text-blue-600 mb-2">{score.toFixed(2)}</div>
+            <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm text-center">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">Exam Results</h2>
+                <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">{score.toFixed(2)}</div>
                 <p className="text-gray-500">Your Score</p>
 
-                <div className="grid grid-cols-3 gap-4 mt-8">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
                     <div className="p-4 bg-green-50 rounded-lg">
                         <div className="text-2xl font-bold text-green-600">{resultAnalysis?.correctCount || 0}</div>
                         <div className="text-xs uppercase text-green-800">Correct</div>
@@ -29,7 +29,7 @@ const ResultAnalysis = () => {
 
                 <button
                     onClick={resetExam}
-                    className="mt-8 px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                    className="mt-8 px-6 md:px-8 py-3 w-full md:w-auto bg-blue-600 text-white rounded-lg hover:bg-blue-700"
                 >
                     Back to Dashboard
                 </button>
@@ -45,10 +45,10 @@ const ResultAnalysis = () => {
 
                         return (
                             <div key={idx} className={`p-4 rounded-lg border ${item.isCorrect ? 'border-green-200 bg-green-50' : 'border-red-100 bg-red-50'}`}>
-                                <p className="font-medium mb-2">Q{idx + 1}. {q.question || "Question data unavailable"}</p>
+                                <p className="font-medium mb-2 text-sm md:text-base">Q{idx + 1}. {q.question || "Question data unavailable"}</p>
                                 <p className="text-sm">Your Answer: {item.selectedOption !== undefined ? q.options?.[item.selectedOption] : 'Skipped'}</p>
                                 <p className="text-sm font-bold mt-1">Correct Answer: {q.options?.[q.correctIndex]}</p>
-                                <p className="text-xs text-gray-600 mt-2 bg-white p-2 rounded">{q.explanation}</p>
+                                <p className="text-xs text-gray-600 mt-2 bg-white p-2 rounded leading-relaxed">{q.explanation}</p>
                             </div>
                         );
                     })}
